@@ -1,0 +1,35 @@
+{% if DEFAULT_PAGINATION %}
+<nav>
+    <ul class="pagination justify-content-center">
+        {% if articles_page.has_previous() %}
+        {% if articles_page.previous_page_number() == 1 %}
+        <li class="page-item">
+            <a class="page-link" href="{{ SITEURL }}/{{ page_name }}.html" tabindex="-1">&laquo;</a>
+        </li>
+        {% else %}
+        <li class="page-item">
+            <a class="page-link" href="{{ SITEURL }}/{{ page_name }}{{ articles_page.previous_page_number() }}.html"
+                tabindex="-1">&laquo;</a>
+        </li>
+        {% endif %}
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">&laquo;</a>
+        </li>
+        {% endif %}
+
+        <li class="page-item disabled"><a class="page-link" href="#">{{ articles_page.number }}</a></li>
+
+        {% if articles_page.has_next() %}
+        <li class="page-item">
+            <a class="page-link"
+                href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html">&raquo;</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">&raquo;</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}

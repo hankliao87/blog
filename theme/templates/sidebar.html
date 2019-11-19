@@ -1,0 +1,63 @@
+<div class="col">
+
+    {% if DISPLAY_PAGES_ON_MENU %}
+    <div class="card my-1">
+        <div class="card-header bg-dark text-white">
+            Pages
+        </div>
+        <div class="list-group list-group-flush">
+            {% for title, link in MENUITEMS %}
+            <a class="list-group-item list-group-item-action" href="{{ link }}">{{ title }}</a>
+            {% endfor %}
+
+            {% for p in pages %}
+            <a class="list-group-item list-group-item-action list-group-item-light {% if p==page %} active {% endif %}"
+                href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
+            {% endfor %}
+
+        </div>
+    </div>
+    {% endif %}
+
+    {% if DISPLAY_CATEGORIES_ON_MENU %}
+    {% if categories and categories| sort | length > 1 %}
+    <div class="card my-1">
+        <div class="card-header bg-dark text-white">
+            Categories
+        </div>
+        <div class="list-group list-group-flush">
+            {% for cat, null in categories %}
+            <a class="list-group-item list-group-item-action list-group-item-light {% if cat==category %} active {% endif %}"
+                href="{{ SITEURL }}/{{ cat.url|e }}">{{ cat }}</a>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    {% endif %}
+
+
+    {% if tag_cloud %}
+    <div class="card my-1">
+        <div class="card-header bg-dark text-white">
+            Tags
+        </div>
+        <div class="list-group list-group-flush">
+            {% for tag in tag_cloud %}
+            <a class="list-group-item list-group-item-action list-group-item-light {% if tag==tags %} active {% endif %}"
+                href="{{ SITEURL }}/{{ tag.0.url }}">{{ tag.0|e }}</a>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+
+    {% if SOCIAL %}
+    <h4>Social</h4>
+    <div class="list-group list-group-flush">
+        {% for name, url in SOCIAL %}
+        <a class="list-group-item list-group-item-action" href="{{ url|e }}">{{ name }}</a>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+</div>

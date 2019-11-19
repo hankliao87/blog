@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}{{ SITENAME }} Search {% endblock %}
+{% block content %}
+
+<div class="entry-content">
+<script>
+    $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch({
+            'show': 8,
+            'mode': 'json',
+            'contentLocation': '{{ SITEURL }}/tipuesearch_content.json'
+        });
+    });
+</script>
+<form class="form-inline my-2 my-lg-0" action="{{ SITEURL }}/search.html"
+onsubmit="return validateForm(this.elements['q'].value);">
+<input class="form-control mr-sm-2" type="text" name="q" id="tipue_search_input" placeholder="Search"
+    pattern=".{3,}" title="At least 3 characters" required>
+<div style="clear: both;"></div>
+</form>
+<div id="tipue_search_content">
+    <div id="tipue_search_loading"></div>
+</div>
+</div>
+{% endblock %}
