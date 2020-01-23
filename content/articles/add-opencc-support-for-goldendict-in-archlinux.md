@@ -8,7 +8,7 @@ Summary: Tutorial of adding Opencc support for Goldendict in Archlinux
 ---
 
 <div class="figure align-center">
-  <img alt="" src="{filename}option.png">
+  <img alt="" src="add-opencc-support-for-goldendict-in-archlinux/option.png">
   <p class="caption"><span class="fig">Figure:</span> The option of transliteration of goldendict with Opencc support.</p>
 </div>
 
