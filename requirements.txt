@@ -1,0 +1,7 @@
+beautifulsoup4
+ghp-import
+markdown
+mdx-include
+pelican
+pycrypto
+pygments
