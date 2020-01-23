@@ -7,7 +7,7 @@ Slug: add-opencc-support-for-goldendict-in-archlinux
 Summary: Tutorial of adding Opencc support for Goldendict in Archlinux
 ---
 
-![](images/add-opencc-support-for-goldendict-in-archlinux/option.png)
+![]({attach}/images/add-opencc-support-for-goldendict-in-archlinux-option.png)
 Figure: The option of transliteration of goldendict with Opencc support.
 
 When you install goldendict using `yay`, you won't see the `Chinese Conversion` section in the transliteration option. This is because the method of building goldendict provided by the community doesn't add the dependent package of the chinese conversion. According to the [README of goldendict](https://github.com/goldendict/goldendict#building-with-chinese-conversion-support), we just need to add the dependent package `opencc` before building it.  
