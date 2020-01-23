@@ -6,6 +6,13 @@ body{
     color: #333 !important
 }
 
+th {
+    position: sticky;
+    background-color: black;
+    color: white;
+    top: 0; /* <- Need to verify correctness of the value */
+}
+
 /* For use with the code_line-number_word-wrap_switcher_jquery.js Pelican plugin */
 code {
 	overflow: auto;
