@@ -4,7 +4,7 @@ Date: 2020-1-23 18:20
 Category: Tutorial
 Tags: Tutorial
 Slug: add-opencc-support-for-goldendict-in-archlinux
-Summary: Tutoral of adding Opencc support for Goldendict in Archlinux
+Summary: Tutorial of adding Opencc support for Goldendict in Archlinux
 ---
 
 First, download `PKGBUILD` and `goldendict.changelog`: `$ yay -G goldendict`
