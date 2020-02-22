@@ -1,11 +1,10 @@
 Deploy Model on Android Device using TVM
 ########################################
-:date: 2020-2-22 20:50
+:date: 2020-2-22 21:00
 :category: Tutorial
 :tags: Tutorial
 :slug: deploy-model-on-android-device-using-tvm
 :summary: Tutorial of deploying model on android device using TVM
-:status: draft
 
 .. raw:: html
 
