@@ -27,12 +27,12 @@ and tvm4j. And you are familiar with the hierarchy of the folder of the tvm.)
 
 #. Install Docker. https://docs.docker.com/install/
 
-#. Clone the TVM repo
+#. Clone the TVM repo.
 
    :code:`$ git clone --depth 1 https://github.com/apache/incubator-tvm.git tvm`
 
-#. Build the Docker image using the Dockerfile `Dockerfile.demo_android` in the
-   folder ``tvm/docker``.
+#. Build the Docker image using the Dockerfile ``Dockerfile.demo_android`` in
+   the folder ``tvm/docker``.
 
    :code:`$ cd tvm/docker/`
 
@@ -192,4 +192,4 @@ Compile the Android Program
 #. The signed apk file will be
    ``./app/build/outputs/apk/release/tvmdemo-release.apk``
 
-#. Copy the apk file out from the Docker container.
+#. Copy the apk file from the Docker container.
