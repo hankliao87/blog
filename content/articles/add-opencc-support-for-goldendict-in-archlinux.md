@@ -7,9 +7,11 @@ Slug: add-opencc-support-for-goldendict-in-archlinux
 Summary: Tutorial of adding opencc support for goldendict in archlinux
 ---
 
-<div class="mx-auto" style="width:75%;">
+<div class="mx-auto" style="width:80%;">
   <figure class="figure">
+    <a href="{attach}/images/add-opencc-support-for-goldendict-in-archlinux-option.png">
     <img src="{attach}/images/add-opencc-support-for-goldendict-in-archlinux-option.png" class="figure-img img-fluid rounded" alt="">
+    </a>
     <figcaption class="figure-caption text-center">The transliteration option in goldendict with opencc support.</figcaption>
   </figure>
 </div>
