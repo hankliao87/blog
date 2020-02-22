@@ -7,7 +7,7 @@ Slug: add-opencc-support-for-goldendict-in-archlinux
 Summary: Tutorial of adding opencc support for goldendict in archlinux
 ---
 
-<div class="mx-auto" style="width:80%;">
+<div class="text-center">
   <figure class="figure">
     <a href="{attach}/images/add-opencc-support-for-goldendict-in-archlinux-option.png">
     <img src="{attach}/images/add-opencc-support-for-goldendict-in-archlinux-option.png" class="figure-img img-fluid rounded" alt="">

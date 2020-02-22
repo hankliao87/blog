@@ -8,7 +8,7 @@ Deploy Model on Android Device using TVM
 
 .. raw:: html
 
-   <div class="mx-auto" style="width:80%;">
+   <div class="text-center">
    <figure class="figure">
    <a href="{attach}/images/deploy-model-on-android-device-using-tvm-result.png">
    <img src="{attach}/images/deploy-model-on-android-device-using-tvm-result.png" class="figure-img img-fluid rounded" alt="">
