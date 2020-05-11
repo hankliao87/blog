@@ -72,7 +72,7 @@ DRAFT_SAVE_AS = 'posts/draft/{slug}/index.html'
 
 MENUITEMS = (
   ('Home','/'),
-#   ('About','/about/'),
+  ('About','/about.html'),
 #   ('Contact','/contact/'),
   ('Blog','/blog/'),
 )
