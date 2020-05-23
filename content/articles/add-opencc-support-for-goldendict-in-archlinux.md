@@ -22,27 +22,15 @@ When you install goldendict using `yay`, you won't see the `Chinese Conversion` 
 First, download `PKGBUILD` and `goldendict.changelog`: `$ yay -G goldendict`  
 
 After that, edit the `PKGBUILD` file in the folder `goldendict`.  
-Change from  
-``` bash
+``` diff
 ...
-depends=('hunspell' 'libxtst' 'libzip' 'libao' 'qt5-webkit' 'qt5-svg' 'qt5-x11extras' 'qt5-tools' 'phonon-qt5' 'ffmpeg')
-...
-build(){
-    cd "${srcdir}"/$pkgname-1.5.0-RC2  
-    qmake-qt5 "CONFIG+=no_epwing_support" PREFIX="/usr"
-
-    make
-}  
-...
-```
-to  
-``` bash
-...
-depends=('hunspell' 'libxtst' 'libzip' 'libao' 'qt5-webkit' 'qt5-svg' 'qt5-x11extras' 'qt5-tools' 'phonon-qt5' 'ffmpeg' 'opencc')
+- depends=('hunspell' 'libxtst' 'libzip' 'libao' 'qt5-webkit' 'qt5-svg' 'qt5-x11extras' 'qt5-tools' 'phonon-qt5' 'ffmpeg')
++ depends=('hunspell' 'libxtst' 'libzip' 'libao' 'qt5-webkit' 'qt5-svg' 'qt5-x11extras' 'qt5-tools' 'phonon-qt5' 'ffmpeg' 'opencc')
 ...
 build(){
     cd "${srcdir}"/$pkgname-1.5.0-RC2
-    qmake-qt5 "CONFIG+=no_epwing_support chinese_conversion_support" PREFIX="/usr"
+-   qmake-qt5 "CONFIG+=no_epwing_support" PREFIX="/usr"
++   qmake-qt5 "CONFIG+=no_epwing_support chinese_conversion_support" PREFIX="/usr"
 
     make
 }
