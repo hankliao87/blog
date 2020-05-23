@@ -44,9 +44,11 @@ DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
 USE_FOLDER_AS_CATEGORY = False
 
+TIPUE_SEARCH= True
+
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ["render_math", "tag_cloud", "better_codeblock_line_numbering", "pelican-encrypt-content"]
-# DIRECT_TEMPLATES = ['index', 'tags', 'categories', 'authors', 'archives', 'search']
+PLUGINS = ["render_math", "tag_cloud", "better_codeblock_line_numbering", "pelican-encrypt-content", "tipue_search"]
+DIRECT_TEMPLATES = ['index', 'tags', 'categories', 'authors', 'archives', 'search']
 
 MARKDOWN = {
     'extensions' : ['markdown.extensions.codehilite', 'markdown.extensions.extra', 'mdx_include'],

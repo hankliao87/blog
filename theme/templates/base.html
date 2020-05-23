@@ -93,7 +93,7 @@
     {% endblock head %}
 </head>
 
-<body style="background-image:url({{ SITEURL }}/{{ BACKGROUND_IMG }})">
+<body style="background-color:#e9ecef">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <a class="navbar-brand" href="{{ SITEURL }}/">
             <img src="{{ SITEURL }}/{{ LOGO_IMG }}" width="30rem">
@@ -124,59 +124,42 @@
             </ul>
         </div>
 
-        {% if TIPUE_SEARCH %}
-        <form class="form-inline my-2 my-lg-0" action="{{ SITEURL }}/search.html"
-            onsubmit="return validateForm(this.elements['q'].value);">
-            <input class="form-control mr-sm-2" type="text" name="q" id="tipue_search_input" placeholder="Search"
-                pattern=".{3,}" title="At least 3 characters" required>
-            <div style="clear: both;"></div>
-        </form>
-        {% endif %}
-
     </nav>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <div class="jumbotron py-3" style="opacity: 0.9">
-                    {% block content %}
+            <div class="m-3 px-3">
+                 {% block content %}
 
-                    {% endblock %}
-                </div>
-                <footer class="footer">
-                    <div class="row">
-                        {% if GITHUB_URL or TWITTER_URL or FACEBOOK_URL %}
-                        <div class="col">
-                            <div class="btn-group" role="group" aria-label="Basic example">
+                 {% endblock %}
+                 <footer class="footer my-3">
+                     <div class="row">
+                         {% if GITHUB_URL or TWITTER_URL or FACEBOOK_URL %}
+                         <div class="col">
+                             <div class="btn-group" role="group" aria-label="Basic example">
 
-                                {% if GITHUB_URL %}
-                                <a class="btn btn-outline-dark btn-sm" href="{{ GITHUB_URL }}"
-                                    target="_blank">Github</a>
-                                {% endif %}
+                                 {% if GITHUB_URL %}
+                                 <a class="btn btn-outline-dark btn-sm" href="{{ GITHUB_URL }}"
+                                     target="_blank">Github</a>
+                                 {% endif %}
 
-                                {% if TWITTER_URL %}
-                                <a class="btn btn-outline-dark btn-sm" href="{{ TWITTER_URL }}"
-                                    target="_blank">Twitter</a>
-                                {% endif %}
+                                 {% if TWITTER_URL %}
+                                 <a class="btn btn-outline-dark btn-sm" href="{{ TWITTER_URL }}"
+                                     target="_blank">Twitter</a>
+                                 {% endif %}
 
-                                {% if FACEBOOK_URL %}
-                                <a class="btn btn-outline-dark btn-sm" href="{{ FACEBOOK_URL }}"
-                                    target="_blank">Facebook</a>
-                                {% endif %}
+                                 {% if FACEBOOK_URL %}
+                                 <a class="btn btn-outline-dark btn-sm" href="{{ FACEBOOK_URL }}"
+                                     target="_blank">Facebook</a>
+                                 {% endif %}
 
-                            </div>
-                        </div>
-                        {% endif %}
-                        <div class="col">
-                            <div class="text-muted text-right my-1">
-                                <p>Designed by
-                                    <a href="https://github.com/hankliao87/"> Hank Liao</a>
-                                </p>
-                            </div>
-                        </div>
+                             </div>
+                         </div>
+                         {% endif %}
+                         <div class="col">
+                             <div class="text-muted text-right my-1">
+                                 Designed by <a href="https://github.com/hankliao87/"> Hank Liao</a>
+                             </div>
+                         </div>
                     </div>
                 </footer>
-            </div>
-        </div>
     </div>
 
 

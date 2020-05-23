@@ -1,5 +1,14 @@
 <div class="col">
 
+    {% if TIPUE_SEARCH %}
+    <div class="col mx-0 px-0">
+        <form action="{{ SITEURL }}/search.html"
+            onsubmit="return validateForm(this.elements['q'].value);">
+            <input class="form-control" type="text" name="q" id="tipue_search_input" placeholder="Search"
+                pattern=".{3,}" title="At least 3 characters" required>
+        </form>
+    </div>
+    {% endif %}
     {% if DISPLAY_PAGES_ON_MENU %}
     <div class="card my-1">
         <div class="card-header bg-dark text-white">
