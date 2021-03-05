@@ -32,6 +32,18 @@
                 </div>
             </div>
 
+            {% if REPO_NAME %}
+            <div class="comments" id="comments">
+                <script src="https://utteranc.es/client.js"
+                        repo="{{REPO_NAME}}"
+                        issue-term="pathname"
+                        label="content"
+                        theme="github-light"
+                        crossorigin="anonymous"
+                        async>
+                </script>
+            </div>
+            {% endif %}
             {% if DISQUS_SITENAME %}
             <div class="comments">
                 <h3>Comments</h3>

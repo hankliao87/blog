@@ -10,7 +10,8 @@ THEME = 'theme'
 TIMEZONE = 'Asia/Taipei'
 DEFAULT_LANG = 'en'
 PATH = 'content'
-LOGO_IMG='images/logo.png'
+LOGO_IMG = 'images/logo.png'
+REPO_NAME = 'hankliao87/blog'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
