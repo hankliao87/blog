@@ -52,10 +52,10 @@ PLUGINS = ["render_math", "tag_cloud", "better_codeblock_line_numbering", "pelic
 DIRECT_TEMPLATES = ['index', 'tags', 'categories', 'authors', 'archives', 'search']
 
 MARKDOWN = {
-    'extensions' : ['markdown.extensions.codehilite', 'markdown.extensions.extra', 'mdx_include'],
+    'extensions' : ['markdown.extensions.codehilite', 'markdown.extensions.extra', 'mdx_include', 'markdown.extensions.admonition'],
     'extension_configs': {
         'markdown.extensions.codehilite': {'css_class': 'highlight', 'linenums': 'False'},
-    }
+    },
 }
 TAG_CLOUD_STEPS = 4
 
