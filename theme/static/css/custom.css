@@ -45,3 +45,8 @@ code {
     color: grey;
     text-align: right;
 }
+
+/* Offset for the sticky header */
+:root {
+    scroll-padding-top: 4rem;
+}

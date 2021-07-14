@@ -41,23 +41,11 @@ EXTRA_PATH_METADATA = {}
 # static paths will be copied without parsing their contents
 STATIC_PATHS = ['images']
 
+DIRECT_TEMPLATES = ['index', 'tags', 'categories', 'authors', 'archives', 'search']
+
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
 USE_FOLDER_AS_CATEGORY = False
-
-TIPUE_SEARCH= True
-
-PLUGIN_PATHS = ['plugins']
-PLUGINS = ["render_math", "tag_cloud", "better_codeblock_line_numbering", "pelican-encrypt-content", "tipue_search"]
-DIRECT_TEMPLATES = ['index', 'tags', 'categories', 'authors', 'archives', 'search']
-
-MARKDOWN = {
-    'extensions' : ['markdown.extensions.codehilite', 'markdown.extensions.extra', 'mdx_include', 'markdown.extensions.admonition'],
-    'extension_configs': {
-        'markdown.extensions.codehilite': {'css_class': 'highlight', 'linenums': 'False'},
-    },
-}
-TAG_CLOUD_STEPS = 4
 
 ARTICLE_PATHS = ['articles']
 ARTICLE_EXCLUDES = []
@@ -86,3 +74,25 @@ DATE_FORMATS = {
     'en': ('%Y/%m/%d'),
 }
 
+PLUGIN_PATHS = ['plugins']
+PLUGINS = ["render_math", "tag_cloud", "better_codeblock_line_numbering", "pelican-encrypt-content", "tipue_search", "pelican-toc"]
+
+MARKDOWN = {
+    'extensions' : ['markdown.extensions.codehilite', 'markdown.extensions.extra', 'mdx_include', 'markdown.extensions.admonition'],
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight', 'linenums': 'False'},
+    },
+}
+
+TAG_CLOUD_STEPS = 4
+TAG_CLOUD_MAX_ITEMS = 50
+TAG_CLOUD_SORTING = "size"
+TAG_CLOUD_BADGE = True
+
+TIPUE_SEARCH= True
+
+TOC = {
+    'TOC_HEADERS'      : '^h[1-6]',
+    'TOC_RUN'          : 'true',
+    'TOC_INCLUDE_TITLE': 'false',
+}

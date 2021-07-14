@@ -1,26 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
 <section id="content">
-    <div class="row">
-        <div class="col-12 col-md-9">
+    <div class="row col-12 col-xl-11 mx-auto">
+        <div class="col-12 col-lg-9 col-xxl-10">
             {% block content_title %}
 
             {% endblock %}
             <div class="row">
                 {% for article in articles_page.object_list %}
-                <div class="card w-100 my-1">
+                <div class="card w-100 my-1 px-0">
                     <div class="card-body">
-                        <h3 class="card-title"><a class="text-body" href="{{ SITEURL }}/{{ article.url }}"
+                        <div class="card-title">
+                            <a class="h3 text-body" href="{{ SITEURL }}/{{ article.url }}"
                                 rel="bookmark" title="{{ article.title|striptags }}">{{ article.title }}</a>
-                        </h3>
-                        <h6 class="card-subtitle">
+                        </div>
+                        <div class="h6 card-subtitle">
                             {{ article.locale_date }}
                             {% if article.authors %}
                             {% for author in article.authors|sort %}
                             <a class="text-secondary" href="{{ SITEURL }}/{{ author.url }}"> {{ author }}</a>
                             {% endfor %}
                             {% endif %}
-                        </h6>
+                        </div>
                         <p class="card-text">{{ article.summary }}</p>
                     </div>
                     <div class="card-footer text-muted">
@@ -28,15 +29,10 @@
                             <div class="col-9">
                                 {% if article.tags %}
                                 {% for tag in article.tags %}
-                                <a class="badge badge-dark" href="{{ SITEURL }}/{{ tag.url }}">{{ tag|e }}</a>
+                                <a class="badge bg-dark link-light" href="{{ SITEURL }}/{{ tag.url }}">{{ tag|e }}</a>
                                 &MediumSpace;
                                 {% endfor %}
                                 {% endif %}
-                            </div>
-                            <div class="col text-right">
-                                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-                                    title="{{ article.title|striptags }}" class="text-dark">Read
-                                    more</a>
                             </div>
                         </div>
                     </div>

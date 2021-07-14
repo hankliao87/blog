@@ -5,7 +5,7 @@
 {% for tag in tag_cloud %}
 <li class="tag-{{ tag.1 }}">
 	<a href="{{ SITEURL }}/{{ tag.0.url }}">
-		<i class="badge badge-pill badge-primary"></i>{{ tag.0|e }}
+		<i class="badge rounded-pill bg-light text-dark"></i>{{ tag.0|e }}
 	</a>
 </li>
 {% endfor %}

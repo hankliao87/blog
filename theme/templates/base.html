@@ -96,71 +96,78 @@
 
 <body style="background-color:#e9ecef">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <a class="navbar-brand" href="{{ SITEURL }}/">
-            <img src="{{ SITEURL }}/{{ LOGO_IMG }}" width="30rem">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ SITEURL }}/">
+                <img src="{{ SITEURL }}/{{ LOGO_IMG }}" width="30rem">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                {% for title, link in MENUITEMS %}
-                <li class="nav-item"><a class='nav-link {% if title=="Blog" %} active {% endif %}' href="{{ link }}">{{ title }}</a></li>
-                {% endfor %}
-                {% if DISPLAY_PAGES_ON_MENU %}
-                {% for p in pages %}
-                <li class="nav-item {% if p == page %} active {% endif %}"><a class="nav-link"
-                        href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
-                {% endfor %}
-                {% else %}
-                {% if DISPLAY_CATEGORIES_ON_MENU %}
-                {% for cat, null in categories %}
-                <li class="nav-item {% if cat == category %} active {% endif %}"><a class="nav-link"
-                        href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-                {% endfor %}
-                {% endif %}
-                {% endif %}
-            </ul>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    {% for title, link in MENUITEMS %}
+                    <li class="nav-item"><a class='nav-link {% if title=="Blog" %} active {% endif %}' href="{{ link }}">{{ title }}</a></li>
+                    {% endfor %}
+                    {% if DISPLAY_PAGES_ON_MENU %}
+                    {% for p in pages %}
+                    <li class="nav-item {% if p == page %} active {% endif %}"><a class="nav-link"
+                            href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+                    {% endfor %}
+                    {% else %}
+                    {% if DISPLAY_CATEGORIES_ON_MENU %}
+                    {% for cat, null in categories %}
+                    <li class="nav-item {% if cat == category %} active {% endif %}"><a class="nav-link"
+                            href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                    {% endif %}
+                </ul>
+            </div>
         </div>
-
     </nav>
-            <div class="m-3 px-3">
-                 {% block content %}
 
-                 {% endblock %}
-                 <footer class="footer my-3">
-                     <div class="row">
-                         {% if GITHUB_URL or TWITTER_URL or FACEBOOK_URL %}
-                         <div class="col">
-                             <div class="btn-group" role="group" aria-label="Basic example">
+    <div class="m-3 px-3">
+        {% block content %}
 
-                                 {% if GITHUB_URL %}
-                                 <a class="btn btn-outline-dark btn-sm" href="{{ GITHUB_URL }}"
-                                     target="_blank">Github</a>
-                                 {% endif %}
+        {% endblock %}
+        <footer class="footer my-3">
+            <div class="row">
+                {% if GITHUB_URL or TWITTER_URL or FACEBOOK_URL %}
+                <div class="col">
+                    <div class="btn-group" role="group" aria-label="Basic example">
 
-                                 {% if TWITTER_URL %}
-                                 <a class="btn btn-outline-dark btn-sm" href="{{ TWITTER_URL }}"
-                                     target="_blank">Twitter</a>
-                                 {% endif %}
+                        {% if GITHUB_URL %}
+                        <a class="btn btn-outline-dark btn-sm" href="{{ GITHUB_URL }}"
+                            target="_blank">Github</a>
+                        {% endif %}
 
-                                 {% if FACEBOOK_URL %}
-                                 <a class="btn btn-outline-dark btn-sm" href="{{ FACEBOOK_URL }}"
-                                     target="_blank">Facebook</a>
-                                 {% endif %}
+                        {% if TWITTER_URL %}
+                        <a class="btn btn-outline-dark btn-sm" href="{{ TWITTER_URL }}"
+                            target="_blank">Twitter</a>
+                        {% endif %}
 
-                             </div>
-                         </div>
-                         {% endif %}
-                         <div class="col">
-                             <div class="text-muted text-right my-1">
-                                 Designed by <a href="https://github.com/hankliao87/"> Hank Liao</a>
-                             </div>
-                         </div>
+                        {% if FACEBOOK_URL %}
+                        <a class="btn btn-outline-dark btn-sm" href="{{ FACEBOOK_URL }}"
+                            target="_blank">Facebook</a>
+                        {% endif %}
+
+                        {% if FEED_ALL_ATOM %}
+                        <a class="btn btn-outline-dark btn-sm" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}"
+                            target="_blank">RSS</a>
+                        {% endif %}
+
                     </div>
-                </footer>
+                </div>
+                {% endif %}
+                <div class="col">
+                    <div class="text-muted text-end my-1">
+                        Designed by <a href="https://github.com/hankliao87/"> Hank Liao</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 
 
@@ -168,7 +175,7 @@
     {% include 'disqus_script.html' %}
     {% include 'piwik.html' %}
 
-    <script type="text/javascript" src="{{ SITEURL }}/theme/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="{{ SITEURL }}/theme/js/jquery.min.js"></script>
     <script type="text/javascript" src="{{ SITEURL }}/theme/js/popper.min.js"></script>
     <script type="text/javascript" src="{{ SITEURL }}/theme/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="{{ SITEURL }}/theme/js/custom.js"></script>

@@ -3,34 +3,71 @@
 {% block content %}
 <section id="content" class="body">
 
-    <div class="row">
-        <div class="col-12 col-md-9">
+    <div class="row col-12 col-xl-11 mx-auto">
+
+        {% if TIPUE_SEARCH %}
+        <div class="col d-block d-lg-none">
+            <div class="col mx-0 px-0">
+                <form action="{{ SITEURL }}/search.html"
+                    onsubmit="return validateForm(this.elements['q'].value);">
+                    <input class="form-control" type="text" name="q" id="tipue_search_input" placeholder="Search"
+                        pattern=".{3,}" title="At least 3 characters" required>
+                </form>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="col-12 col-lg-9 col-xxl-10">
             <div class="card w-100 my-1">
-                <div class="card-body">
-                    <h1 class="card-title"><a class="text-body" href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-                            title="{{ article.title|striptags }}">{{ article.title }}</a>
-                    </h1>
+                <div class="card-body m-3">
+                    <div class="h1 card-title">{{ article.title }}</div>
                     {% import 'translations.html' as translations with context %}
                     {{ translations.translations_for(article) }}
-                    <h6 class="card-subtitle">
+                    <div class="h6 card-subtitle text-end">
                         {{ article.locale_date }}
                         {% if article.authors %}
                         {% for author in article.authors|sort %}
                         <a class="text-secondary" href="{{ SITEURL }}/{{ author.url }}"> {{ author }}</a>
                         {% endfor %}
                         {% endif %}
-                    </h6>
-                    <p class="card-text">{{ article.content }}</p>
+                    </div>
+                    <div class="card-text">
+                        {{ article.content }}
+                    </div>
                 </div>
                 <div class="card-footer text-muted">
                     {% if article.tags %}
                     {% for tag in article.tags %}
-                    <a class="badge badge-dark" href="{{ SITEURL }}/{{ tag.url }}">{{ tag|e }}</a>
+                    <a class="badge bg-dark link-light" href="{{ SITEURL }}/{{ tag.url }}">{{ tag|e }}</a>
                     &MediumSpace;
                     {% endfor %}
                     {% endif %}
                 </div>
             </div>
+
+            <a href="#" class="btn btn-dark rounded-3"
+                style="position:fixed;bottom:6em;right:1em;z-index:1000">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                </svg>
+            </a>
+            
+            {% if article.toc %}
+            <a class="btn btn-dark"
+            style="position:fixed;bottom:3em;right:1em;z-index:1000"
+            data-bs-toggle="offcanvas" href="#toc_sidebar" role="button" aria-controls="toc_sidebar">
+                TOC
+            </a>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="toc_sidebar" aria-labelledby="toc_sidebar_title">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="toc_sidebar_title">{{article.title}}</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    {{article.toc}}
+                </div>
+            </div>
+            {% endif %}
 
             {% if REPO_NAME %}
             <div class="comments" id="comments">
