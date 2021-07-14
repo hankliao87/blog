@@ -37,3 +37,4 @@ jobs:
         branch: gh-pages # the branch the action should deploy to.
         folder: output # the folder the action should deploy.
         token: ${{ secrets.GH_PAT }}
+        single-commit: true
