@@ -16,9 +16,9 @@ When we change the theme of the QT apps to the dark varient, the text of the int
    <div class="text-center">
    <figure class="figure">
    <a href="{attach}/images/fix-dark-text-in-dark-theme-using-qt-in-gnome-1.png">
-   <img src="{attach}/images/fix-dark-text-in-dark-theme-using-qt-in-gnome-1.png" class="figure-img img-fluid rounded" alt="Dark Text on Dark Background (Goldendict)">
+   <img src="{attach}/images/fix-dark-text-in-dark-theme-using-qt-in-gnome-1.png" class="figure-img img-fluid rounded" alt="Dark text on dark background (Goldendict)">
    </a>
-   <figcaption class="figure-caption text-center">Dark Text on Dark Background (Goldendict)</figcaption>
+   <figcaption class="figure-caption text-center">Dark text on dark background (Goldendict)</figcaption>
    </figure>
    </div>
 
