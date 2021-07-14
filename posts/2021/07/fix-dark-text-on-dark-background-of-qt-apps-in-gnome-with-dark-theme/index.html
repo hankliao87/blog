@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Fix Dark Text on Dark Background of QT Apps in Gnome with Dark Theme</title>
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="#343a40">
+    <link
+        href="https://hankliao87.github.io/blog/feeds/all.atom.xml"
+        type="application/atom+xml" rel="alternate" title="Hank Liao's Blog Full Atom Feed" />
+
+
+    <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://hankliao87.github.io/blog/theme/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://hankliao87.github.io/blog/theme/css/pygment.css" />
+    <link rel="stylesheet" type="text/css" href="https://hankliao87.github.io/blog/theme/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://hankliao87.github.io/blog/theme/css/admonition.css" />
+
+    <link rel="stylesheet" type="text/css" href="https://hankliao87.github.io/blog/theme/tipuesearch/css/tipuesearch.css">
+
+
+
+</head>
+
+<body style="background-color:#e9ecef">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://hankliao87.github.io/blog/">
+                <img src="https://hankliao87.github.io/blog/images/logo.png" width="30rem">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class='nav-link ' href="/">Home</a></li>
+                    <li class="nav-item"><a class='nav-link ' href="/about.html">About</a></li>
+                    <li class="nav-item"><a class='nav-link  active ' href="/blog/">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="m-3 px-3">
+<section id="content" class="body">
+
+    <div class="row col-12 col-xl-11 mx-auto">
+
+        <div class="col d-block d-lg-none">
+            <div class="col mx-0 px-0">
+                <form action="https://hankliao87.github.io/blog/search.html"
+                    onsubmit="return validateForm(this.elements['q'].value);">
+                    <input class="form-control" type="text" name="q" id="tipue_search_input" placeholder="Search"
+                        pattern=".{3,}" title="At least 3 characters" required>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-9 col-xxl-10">
+            <div class="card w-100 my-1">
+                <div class="card-body m-3">
+                    <div class="h1 card-title">Fix Dark Text on Dark Background of QT Apps in Gnome with Dark Theme</div>
+                    
+                    <div class="h6 card-subtitle text-end">
+                        2021/07/14
+                        <a class="text-secondary" href="https://hankliao87.github.io/blog/author/hankliao87.html"> hankliao87</a>
+                    </div>
+                    <div class="card-text">
+                        <div class="section" id="problem">
+<h2>Problem</h2>
+<p>When we change the theme of the QT apps to the dark varient, the text of the interference might be difficult to see on the dark background.</p>
+<div class="text-center">
+<figure class="figure">
+<a href="https://hankliao87.github.io/blog/posts/2021/07/fix-dark-text-on-dark-background-of-qt-apps-in-gnome-with-dark-theme/fix-dark-text-in-dark-theme-using-qt-in-gnome-1.png">
+<img src="https://hankliao87.github.io/blog/posts/2021/07/fix-dark-text-on-dark-background-of-qt-apps-in-gnome-with-dark-theme/fix-dark-text-in-dark-theme-using-qt-in-gnome-1.png" class="figure-img img-fluid rounded" alt="Dark text on dark background (Goldendict)">
+</a>
+<figcaption class="figure-caption text-center">Dark text on dark background (Goldendict)</figcaption>
+</figure>
+</div></div>
+<div class="section" id="solution">
+<h2>Solution</h2>
+<ol class="arabic">
+<li><p class="first">Install Tools: <code>$ yay -S kvantum-qt5 qt5ct qt5-styleplugins</code></p>
+</li>
+<li><p class="first">Add the content below in <tt class="docutils literal"><span class="pre">~/.profile</span></tt>:</p>
+<div class="highlight"><pre><span class="code-line"><span></span><span class="nb">export</span> <span class="nv">QT_QPA_PLATFORMTHEME</span><span class="o">=</span>gtk2</span>
+<span class="code-line"><span class="nb">export</span> <span class="nv">QT_STYLE_OVERRIDE</span><span class="o">=</span>kvantum</span>
+</pre></div>
+</li>
+<li><p class="first">Select preferred dark theme in kvantum.</p>
+<div class="text-center">
+<figure class="figure">
+<a href="https://hankliao87.github.io/blog/posts/2021/07/fix-dark-text-on-dark-background-of-qt-apps-in-gnome-with-dark-theme/fix-dark-text-in-dark-theme-using-qt-in-gnome-4.png">
+<img src="https://hankliao87.github.io/blog/posts/2021/07/fix-dark-text-on-dark-background-of-qt-apps-in-gnome-with-dark-theme/fix-dark-text-in-dark-theme-using-qt-in-gnome-4.png" class="figure-img img-fluid rounded" alt="Select preferred dark theme">
+</a>
+<figcaption class="figure-caption text-center">Select preferred dark theme</figcaption>
+</figure>
+</div></li>
+<li><p class="first">Change <tt class="docutils literal">kvantum</tt> to <tt class="docutils literal"><span class="pre">kvantum-dark</span></tt> in the QT5 Setting as below:</p>
+<div class="text-center">
+<figure class="figure">
+<a href="https://hankliao87.github.io/blog/posts/2021/07/fix-dark-text-on-dark-background-of-qt-apps-in-gnome-with-dark-theme/fix-dark-text-in-dark-theme-using-qt-in-gnome-3.png">
+<img src="https://hankliao87.github.io/blog/posts/2021/07/fix-dark-text-on-dark-background-of-qt-apps-in-gnome-with-dark-theme/fix-dark-text-in-dark-theme-using-qt-in-gnome-3.png" class="figure-img img-fluid rounded" alt="Change kvantum to kvantum-dark">
+</a>
+<figcaption class="figure-caption text-center">Change kvantum to kvantum-dark</figcaption>
+</figure>
+</div></li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Sometimes you will need to logout and login again to apply the new settings.</p>
+</div>
+</div>
+<div class="section" id="result">
+<h2>Result</h2>
+<div class="text-center">
+<figure class="figure">
+<a href="https://hankliao87.github.io/blog/posts/2021/07/fix-dark-text-on-dark-background-of-qt-apps-in-gnome-with-dark-theme/fix-dark-text-in-dark-theme-using-qt-in-gnome-2.png">
+<img src="https://hankliao87.github.io/blog/posts/2021/07/fix-dark-text-on-dark-background-of-qt-apps-in-gnome-with-dark-theme/fix-dark-text-in-dark-theme-using-qt-in-gnome-2.png" class="figure-img img-fluid rounded" alt="Interface after fix (Goldendict)">
+</a>
+<figcaption class="figure-caption text-center">Interface after fix (Goldendict)</figcaption>
+</figure>
+</div></div>
+
+                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                    <a class="badge bg-dark link-light" href="https://hankliao87.github.io/blog/tag/tutorial.html">Tutorial</a>
+                    &MediumSpace;
+                </div>
+            </div>
+
+            <a href="#" class="btn btn-dark rounded-3"
+                style="position:fixed;bottom:3em;right:1em;z-index:1000">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                </svg>
+            </a>
+
+            <div class="comments" id="comments">
+                <script src="https://utteranc.es/client.js"
+                        repo="hankliao87/blog"
+                        issue-term="title"
+                        label="content"
+                        theme="github-light"
+                        crossorigin="anonymous"
+                        async>
+                </script>
+            </div>
+
+        </div>
+
+<div class="col d-none d-lg-block">
+
+    <div class="col mx-0 px-0 my-1">
+        <form action="https://hankliao87.github.io/blog/search.html"
+            onsubmit="return validateForm(this.elements['q'].value);">
+            <input class="form-control" type="text" name="q" id="tipue_search_input" placeholder="Search"
+                pattern=".{3,}" title="At least 3 characters" required>
+        </form>
+    </div>
+
+
+
+    <div class="card my-2">
+        <div class="card-header bg-dark text-white">
+            Tags
+        </div>
+        <div class="list-group list-group-flush">
+            <a class="list-group-item list-group-item-action list-group-item-light d-flex justify-content-between align-items-center "
+                href="https://hankliao87.github.io/blog/tag/tutorial.html">Tutorial
+                    <span class="badge  bg-dark  rounded-pill">3</span>
+            </a>
+        </div>
+    </div>
+
+
+</div>    </div>
+
+
+</section>
+        <footer class="footer my-3">
+            <div class="row">
+                <div class="col">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+
+                        <a class="btn btn-outline-dark btn-sm" href="https://github.com/hankliao87/"
+                            target="_blank">Github</a>
+
+
+
+                        <a class="btn btn-outline-dark btn-sm" href="https://hankliao87.github.io/blog/feeds/all.atom.xml"
+                            target="_blank">RSS</a>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="text-muted text-end my-1">
+                        Designed by <a href="https://github.com/hankliao87/"> Hank Liao</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+
+    <script type="text/javascript" src="https://hankliao87.github.io/blog/theme/js/jquery.min.js"></script>
+    <script type="text/javascript" src="https://hankliao87.github.io/blog/theme/js/popper.min.js"></script>
+    <script type="text/javascript" src="https://hankliao87.github.io/blog/theme/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://hankliao87.github.io/blog/theme/js/custom.js"></script>
+    <script type="text/javascript" src="https://hankliao87.github.io/blog/theme/js/modernizr-2.6.2.min.js"></script>
+
+    <script type="text/javascript" src="https://hankliao87.github.io/blog/tipuesearch_content.js"></script>
+    <script type="text/javascript" src="https://hankliao87.github.io/blog/theme/tipuesearch/tipuesearch_set.js"></script>
+    <script type="text/javascript" src="https://hankliao87.github.io/blog/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script type="text/javascript" src="https://hankliao87.github.io/blog/tipuesearch_content.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#tipue_search_input').tipuesearch({
+                'mode': 'json',
+                'contentLocation': 'https://hankliao87.github.io/blog/tipuesearch_content.json'
+            });
+        });
+    </script>
+
+</body>
+
+</html>
