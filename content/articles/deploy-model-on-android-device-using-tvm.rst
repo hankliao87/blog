@@ -11,7 +11,7 @@ Deploy Model on Android Device using TVM
    <div class="text-center">
    <figure class="figure">
    <a href="{attach}/images/deploy-model-on-android-device-using-tvm-result.png">
-   <img src="{attach}/images/deploy-model-on-android-device-using-tvm-result.png" class="figure-img img-fluid rounded" alt="">
+   <img src="{attach}/images/deploy-model-on-android-device-using-tvm-result.png" class="figure-img img-fluid rounded" alt="The schematic diagram of the result">
    </a>
    <figcaption class="figure-caption text-center">The schematic diagram of the result. The cat image is downloaded from <a href="https://raw.githubusercontent.com/dmlc/mxnet.js/master/data/cat.png?raw=true">here</a>.</figcaption>
    </figure>
