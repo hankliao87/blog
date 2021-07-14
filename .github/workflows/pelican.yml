@@ -28,7 +28,6 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@4.1.4
       if: success()
       env:
-        ACCESS_TOKEN: ${{ secrets.GH_PAT }}
-        BASE_BRANCH: master # The branch the action should deploy from.
-        BRANCH: gh-pages # The branch the action should deploy to.
-        FOLDER: output # The folder the action should deploy.
+        branch: gh-pages # the branch the action should deploy to.
+        folder: output # the folder the action should deploy.
+        token: ${{ secrets.GH_PAT }}
